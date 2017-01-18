@@ -1,6 +1,6 @@
-# Git2019/Symfony
+# Git2019 > Symfony
 
-This project contains what I learn at school about [Symfony](http://symfony.com/). :school_satchel:
+This project contains what we learn at school about [Symfony](http://symfony.com/). :school_satchel:
 
 # Requirements
 
