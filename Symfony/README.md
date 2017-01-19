@@ -2,6 +2,14 @@
 
 This project contains what we learn at school about [Symfony](http://symfony.com/). :school_satchel:
 
+# Nomanclature Exo
+
+Créer une nouvelle branche à partir de la branche symfony, ensuite dans le dossier Exo puis dans le dossier avec la date du jour. Créer votre propre dossier avec comme nomanclature votre pseudo Github, votre prenom et puis votre groupe
+Exemple :
+CMarzin-corentin-g2
+
+En fin de cours vous pouvez merger votre branche avec la branche symfony.
+
 # Requirements
 
 ## Composer
