@@ -52,3 +52,17 @@ php bin/symfony_requirements
 ```
 
 And that's all ! :sparkles:
+
+# Symfony CLI and Console
+
+To check all the Symfony commands line available in the Symfony Console, you can access to its list by running `php bin/console` in your current project directory.
+
+Feel free to add an alias as you will use this CLI a lot in your projects:
+
+```bash
+#.bash_profile or .zshrc
+alias sfc= "php bin/console"
+
+```
+
+*Note:* The Symfony CLIs are independent from the Symfony Project itself and are used in other projects like Laravel for example.
