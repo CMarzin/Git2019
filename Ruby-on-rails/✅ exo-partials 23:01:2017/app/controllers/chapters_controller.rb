@@ -3,13 +3,6 @@ class ChaptersController < ApplicationController
     @chapters = Chapter.parents_only
   end
 
-
-
-
-
-
-
-
   def getOneChapter
     @chapter_id =  params[:id]
     @chapter = Chapter.where(id: @chapter_id )

@@ -1,6 +1,6 @@
 <tr>
     <td>
-        <h3><%= chapter.id %><%= chapter.name %></h3>
+        <h3><%= chapter.name %> - <%= sexy_date(chapter.published_at) %> - <%= time_ago_in_words(chapter.published_at) %></h3>
     </td>
     <%= render partial: "sub_chapter", collection: chapter.children, as: :chapter %>
 </tr>
