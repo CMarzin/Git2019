@@ -66,3 +66,8 @@ alias sfc= "php bin/console"
 ```
 
 *Note:* The Symfony CLIs are independent from the Symfony Project itself and are used in other projects like Laravel for example.
+
+## Generate a Bundle
+
+You can easily generate a bundle with the Symfony CLI with the command :
+`php bin/console generate:bundle` and then follow the Bundle Assistant instructions.
