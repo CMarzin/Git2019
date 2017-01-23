@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Chevalier creation</h1>
+
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Create Task</button>
+        </div>
+    </div>
+{{ form_end(form) }}
+
+
+    <ul>
+        <li>
+            <a href="{{ path('chevalier_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,3 @@
+hetic_homepage:
+    path:     /
+    defaults: { _controller: HeticBundle:Default:index }
