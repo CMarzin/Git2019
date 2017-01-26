@@ -1,0 +1,4 @@
+services:
+#    bunker.example:
+#        class: BunkerBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

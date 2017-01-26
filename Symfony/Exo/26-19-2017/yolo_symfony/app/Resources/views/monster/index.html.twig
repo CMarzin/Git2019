@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Monsters list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Bio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for monster in monsters %}
+            <tr>
+                <td><a href="{{ path('monster_show', { 'id': monster.id }) }}">{{ monster.id }}</a></td>
+                <td>{{ monster.name }}</td>
+                <td>{{ monster.bio }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('monster_show', { 'id': monster.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('monster_edit', { 'id': monster.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('monster_new') }}">Create a new monster</a>
+        </li>
+    </ul>
+{% endblock %}

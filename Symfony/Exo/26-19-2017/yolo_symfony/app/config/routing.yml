@@ -1,3 +1,8 @@
+bunker:
+    resource: "@BunkerBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 hetic_chevalier:
     resource: "@HeticBundle/Controller/chevalierController.php"
     type:     annotation
