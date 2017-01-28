@@ -1,0 +1,6 @@
+services:
+#    hetic.example:
+#        class: HeticBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+  hetic.services.time_is_on_my_side:
+      class: HeticBundle\Services\TimeIsOnMySide

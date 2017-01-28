@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Symfony2PluginSettings">
+    <option name="pluginEnabled" value="true" />
+    <option name="codeFoldingPhpRoute" value="false" />
+    <option name="codeFoldingPhpModel" value="false" />
+    <option name="codeFoldingPhpTemplate" value="false" />
+    <option name="codeFoldingTwigRoute" value="false" />
+    <option name="codeFoldingTwigTemplate" value="false" />
+    <option name="codeFoldingTwigConstant" value="false" />
+    <option name="profilerCsvPath" value="" />
+  </component>
+</project>
