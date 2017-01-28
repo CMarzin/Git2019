@@ -1,0 +1,24 @@
+chevalier_index:
+    path:     /
+    defaults: { _controller: "HeticBundle:Chevalier:index" }
+    methods:  GET
+
+chevalier_show:
+    path:     /{id}/show
+    defaults: { _controller: "HeticBundle:Chevalier:show" }
+    methods:  GET
+
+chevalier_new:
+    path:     /new
+    defaults: { _controller: "HeticBundle:Chevalier:new" }
+    methods:  [GET, POST]
+
+chevalier_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HeticBundle:Chevalier:edit" }
+    methods:  [GET, POST]
+
+chevalier_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HeticBundle:Chevalier:delete" }
+    methods:  DELETE

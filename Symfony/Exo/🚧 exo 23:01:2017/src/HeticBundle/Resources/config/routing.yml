@@ -1,0 +1,8 @@
+hetic_chevalier:
+    resource: "@HeticBundle/Resources/config/routing/chevalier.yml"
+    prefix:   /chevalier
+
+hetic_homepage:
+    path:     /hetic
+    defaults: { _controller: HeticBundle:Default:index }
+    prefix:   /hetic

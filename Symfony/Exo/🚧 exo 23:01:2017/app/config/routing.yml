@@ -1,0 +1,15 @@
+hetic_student:
+    resource: "@HeticBundle/Controller/StudentController.php"
+    type:     annotation
+
+hetic_student_type:
+    resource: "@HeticBundle/Controller/StudentTypeController.php"
+    type:     annotation
+
+hetic:
+    resource: "@HeticBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
