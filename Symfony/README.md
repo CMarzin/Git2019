@@ -66,3 +66,80 @@ alias sfc= "php bin/console"
 ```
 
 *Note:* The Symfony CLIs are independent from the Symfony Project itself and are used in other projects like Laravel for example.
+
+## Create Services
+1. First create `YourBundle/Services/YourClass.php` and declare its namespace (which typically would be `namespace HeticBundle\Services;`)
+2. Then create the methods you want to reuse later in YourClass.
+3. Declare YourClass
+```yaml
+# YourBundle/Ressources/config/services.yml
+services:
+  yourbundle.services.your_class:
+      class: YourBundle\Services\YourClassService
+```
+4. Now you can call YourClass in a new Action:
+```php
+<?php
+// YourBundle/YourEntityController
+public function indexAction()
+{
+	$service = $this->get('yourbundle.services.your_class');
+	// ... rest of your code
+}
+```
+5. (Optionnal but recommended)
+If you want to use all the datas on a particular Entity, you can add this:
+```php
+<?php
+// YourBundle/Repository/YourEntityRepository.php
+public function getAllDatas ()
+{
+	$data = $this->findAll();
+	return $data;
+}
+```
+It will be useful to call datas in your Controller:
+```php
+<?php
+// YourBundle/YourEntityController
+public function indexAction()
+	{
+		$service = $this->get('yourbundle.services.your_class');
+
+    // Declare the Doctrine Entity Manager in $em for easier usage.
+    $em = $this->getDoctrine()->getManager();
+
+    // Get the Repository that correspond to YourEntity and use the method created above in the precedent code block.
+    $datas = $em->getRepository('YourBundle:YourEntity')->getAllDatas();
+  }
+```
+Now `$datas`  stocks all the datas from the tables of YourEntity.
+
+6. Finally you need to tell YourController to return something. Usually it is rendering a view, with some datas as variables to be reused in this particular view.
+```php
+<?php
+// YourBundle/YourEntityController
+public function indexAction()
+	{
+		$service = $this->get('yourbundle.services.your_class');
+
+    // Declare the Doctrine Entity Manager in $em for easier usage.
+    $em = $this->getDoctrine()->getManager();
+
+    // Get the Repository that correspond to YourEntity and use the method created above in the precedent code block.
+    $datas = $em->getRepository('YourBundle:YourEntity')->getAllDatas();
+
+    // Return a rendered view, with $datas as a variable.
+    return $this->render('yourentity/index.html.twig',  array(
+	    'datas' => $datas,
+    ));
+}
+```
+And in your view you will be able to use this variable and display it.
+```twig
+  {% extends "base.html.twig" %}
+
+  {% block body %}
+  	<p>{{ dump(datas) }}</p>
+  {% endblock %}
+```
