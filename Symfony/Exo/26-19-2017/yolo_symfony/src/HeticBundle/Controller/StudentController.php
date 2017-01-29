@@ -12,13 +12,21 @@ class StudentController extends Controller
      */
     public function indexAction()
     {
+        $service = $this->get('hetic.services.time_is_on_my_side');
         $em = $this->getDoctrine()->getEntityManager();
-        $data = -$em->getRepository('HeticBundle:Student')->displayAges();
-        dump($data);
-        die();
-        //return $this->render('HeticBundle:StudentController:index.html.twig', array(
-            // ...
-       // ));
+        $students = $em->getRepository('HeticBundle:Student')->displayAges();
+
+         $ages = [];
+
+         foreach ($students as $student) {
+             $age = $service->getAge($student->getDateOfBirth());
+             array_push($ages,$age);
+         }
+
+        return $this->render('Student/index.html.twig', array(
+            'students' => $students,
+            'ages' => $ages,
+       ));
     }
 
 }

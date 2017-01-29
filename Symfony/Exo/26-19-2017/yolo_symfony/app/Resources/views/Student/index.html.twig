@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}HeticBundle:StudentController:index{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the StudentController:index page</h1>
+    {% for student in students %}
+        <p>
+            {{ student.id }}: {{ student.firstname }} {{ student.lastname }}
+
+            {% if ages is defined %}
+                , age: {{ ages[student.id -1] }}
+            {% endif %}
+        </p>
+    {% endfor %}
+
+    {% if ages is not defined %}
+        Go to <a href="http://localhost:8000/index">http://localhost:8000/index</a> to see view with ages.
+    {% endif %}
+
+{% endblock %}
