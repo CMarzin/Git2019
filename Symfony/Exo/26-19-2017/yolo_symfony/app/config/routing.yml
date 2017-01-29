@@ -1,3 +1,11 @@
+hetic_student_type:
+    resource: "@HeticBundle/Controller/StudentTypeController.php"
+    type:     annotation
+
+hetic_student:
+    resource: "@HeticBundle/Controller/StudentController.php"
+    type:     annotation
+
 bunker:
     resource: "@BunkerBundle/Controller/"
     type:     annotation

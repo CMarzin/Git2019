@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Studenttypes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for studentType in studentTypes %}
+            <tr>
+                <td><a href="{{ path('studenttype_show', { 'id': studentType.id }) }}">{{ studentType.id }}</a></td>
+                <td>{{ studentType.name }}</td>
+                <td>{% if studentType.createdAt %}{{ studentType.createdAt|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('studenttype_show', { 'id': studentType.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('studenttype_edit', { 'id': studentType.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('studenttype_new') }}">Create a new studentType</a>
+        </li>
+    </ul>
+{% endblock %}

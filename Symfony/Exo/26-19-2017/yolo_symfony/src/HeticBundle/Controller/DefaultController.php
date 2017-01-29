@@ -8,6 +8,13 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('HeticBundle:Default:index.html.twig');
+
+        $studentRepo = $this->getDoctrine()->getRepository('HeticBundle:Student');
+        return $this->render('student/unemethode.html.twig', [
+            'students' => $studentRepo->uneMethode(),
+        ]);
+
+
+
     }
 }
