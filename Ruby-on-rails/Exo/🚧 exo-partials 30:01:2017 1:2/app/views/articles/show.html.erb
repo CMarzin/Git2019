@@ -1,0 +1,6 @@
+<%= @article.content %>
+<%= time_ago_in_words( @article.published_at) %> old.
+<%= link_to("Back Home",
+    controller: 'chapters',
+    action: 'getBigChapters',
+    anchor: 'article_id' + @article.id.to_s) %>
