@@ -1,0 +1,10 @@
+<tr>
+  <td>
+    <span style="padding-left: 4em" id="article_id_<%= article.id %>">
+      <%= article.content %>
+
+      <%= link_to("Voir l'article", article_path(article), style: "color:blue") %>
+      <b style="color:<%= set_views_color(article.views_count) %>">|| <%= article.views_count %> views</b>
+    </span>
+    <td>
+    </tr>
