@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}HeticBundle:CreatureFantastique:chaud cacao{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the CreatureFantastique:indec page</h1>
+    <div>
+        <h2>{{ creatureFantastique.nom | nl2br }}</h2>
+        <p>{{ creatureFantastique.superPower }}</p>
+    </div>
+    <a href="{{ path("hetic_creaturefantastique_index") }}">Index</a>
+{% endblock %}
