@@ -13,7 +13,13 @@ class TimeIsOnMySide
 {
     public function getAge(\DateTime $dateTime)
     {
-           $interval = $dateTime->diff(new \DateTime('now'));
-           return $interval->y;
+        $now = new \DateTime('now');
+        if ($dateTime > $now) {
+
+            return null;
+        }
+        $interval = $dateTime->diff($now);
+
+        return $interval->y;
     }
 }

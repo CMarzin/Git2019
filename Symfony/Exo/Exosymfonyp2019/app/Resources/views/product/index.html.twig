@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1>Products list</h1>
+    </div>
+    <div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Price VAT incl.</th>
+                <th>Uuid</th>
+                <th>ProductType</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td><a href="{{ path('_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ vat[product.id] }}</td>
+                <td>{{ product.uuid }}</td>
+                <td>{{ product.productType.name }}</td>
+                <td>
+                    <a href="{{ path('_show', { 'id': product.id }) }}"><button type="button" class="btn btn-lg btn-primary">Show</button></a>
+                    <a href="{{ path('_edit', { 'id': product.id }) }}"><button type="button" class="btn btn-lg btn-warning">Edit</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="{{ path('_new') }}"><button type="button" class="btn btn-lg btn-success">Create a new product</button></a>
+        </li>
+    </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1>Product</h1>
+        </div>
+        <div class="panel-body">
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ product.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <td>{{ product.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                    <tr>
+                        <th>Price VAT included</th>
+                        <td>{{ vat }}</td>
+                    </tr>
+                    <tr>
+                        <th>Uuid</th>
+                        <td>{{ product.uuid }}</td>
+                    </tr>
+                    <tr>
+                        <th>ProductType</th>
+                        <td>{{ product.productType.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="{{ path('_index') }}"><button type="button" class="btn btn-lg btn-primary">Back to the list</button></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{{ path('_edit', { 'id': product.id }) }}"><button type="button" class="btn btn-lg btn-warning">Edit</button></a>
+                </li>
+                <li class="list-group-item">
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete" class="btn btn-lg btn-danger" />
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

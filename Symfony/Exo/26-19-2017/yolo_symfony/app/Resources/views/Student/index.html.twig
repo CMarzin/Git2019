@@ -9,7 +9,7 @@
             {{ student.id }}: {{ student.firstname }} {{ student.lastname }}
 
             {% if ages is defined %}
-                , age: {{ ages[student.id -1] }}
+                , age: {{ ages[student.id] }}
             {% endif %}
         </p>
     {% endfor %}

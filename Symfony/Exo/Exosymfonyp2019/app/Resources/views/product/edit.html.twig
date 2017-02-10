@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1>Product edit</h1>
+        </div>
+        <div class="panel-body">
+
+            {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input type="submit" value="Edit" class="btn btn-lg btn-success"/>
+            {{ form_end(edit_form) }}
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="{{ path('_index') }}"><button type="button" class="btn btn-lg btn-primary">Back to the list</button></a>
+                </li>
+                <li class="list-group-item">
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete" class="btn btn-lg btn-danger">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -16,12 +16,8 @@ class StudentRepository extends \Doctrine\ORM\EntityRepository
             ->addOrderBy('student_repository.dateOfBirth', 'DESC')
             ->getQuery()
         ;
+
         return $query->getResult();
     }
 
-    public function displayAges()
-    {
-        $data = $this->findAll();
-        return $data;
-    }
 }
